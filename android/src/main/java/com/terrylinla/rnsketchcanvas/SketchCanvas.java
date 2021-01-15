@@ -64,28 +64,28 @@ public class SketchCanvas extends View {
         mContext = context;
     }
 
-    public boolean openImageFile(String filename, String directory, String mode) {
+    public boolean openImageFile() {
    
-            int res = mContext.getResources().getIdentifier(
-                    filename.lastIndexOf('.') == -1 ? filename : filename.substring(0, filename.lastIndexOf('.')),
-                    "drawable",
-                    mContext.getPackageName());
-            BitmapFactory.Options bitmapOptions = new BitmapFactory.Options();
-            Bitmap bitmap = res == 0 ?
-                    BitmapFactory.decodeFile(new File(filename, directory == null ? "" : directory).toString(), bitmapOptions) :
-                    BitmapFactory.decodeResource(mContext.getResources(), res);
+            // int res = mContext.getResources().getIdentifier(
+            //         filename.lastIndexOf('.') == -1 ? filename : filename.substring(0, filename.lastIndexOf('.')),
+            //         "drawable",
+            //         mContext.getPackageName());
+            // BitmapFactory.Options bitmapOptions = new BitmapFactory.Options();
+            // Bitmap bitmap = res == 0 ?
+            //         BitmapFactory.decodeFile(new File(filename, directory == null ? "" : directory).toString(), bitmapOptions) :
+            //         BitmapFactory.decodeResource(mContext.getResources(), res);
             // String fileName="/Users/GautamBohara/Documents/Trunk/React/Github/vision/iModel/assets/naruto.png";
             File file = new File(filename);
             // bitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
             // Drawable d = getResources().getDrawable(android.R.drawable.alert_dark_frame);
             Drawable d = getResources().getDrawable(R.drawable.amsler);
-            bitmap =((BitmapDrawable)d).getBitmap(); // BitmapFactory.decodeResource(this.getResources(), );
+            Bitmap bitmap =((BitmapDrawable)d).getBitmap(); // BitmapFactory.decodeResource(this.getResources(), );
 
             if(bitmap != null) {
                 mBackgroundImage = bitmap;
                 mOriginalHeight = bitmap.getHeight();
                 mOriginalWidth = bitmap.getWidth();
-                mContentMode = mode;
+                //mContentMode = mode;
                 invalidateCanvas(true);
               return true;
             }else{
