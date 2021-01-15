@@ -65,7 +65,7 @@ public class SketchCanvas extends View {
     }
 
     public boolean openImageFile(String filename, String directory, String mode) {
-        if(filename != null) {
+   
             int res = mContext.getResources().getIdentifier(
                     filename.lastIndexOf('.') == -1 ? filename : filename.substring(0, filename.lastIndexOf('.')),
                     "drawable",
@@ -87,11 +87,11 @@ public class SketchCanvas extends View {
                 mOriginalWidth = bitmap.getWidth();
                 mContentMode = mode;
                 invalidateCanvas(true);
-
-                return true;
+              return true;
+            }else{
+                return false;
             }
-        }
-        return false;
+    
     }
 
     public void setCanvasText(ReadableArray aText) {

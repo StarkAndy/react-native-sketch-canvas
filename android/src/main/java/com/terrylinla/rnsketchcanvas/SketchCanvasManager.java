@@ -55,13 +55,19 @@ public class SketchCanvasManager extends SimpleViewManager<SketchCanvas> {
 
     @ReactProp(name = PROPS_LOCAL_SOURCE_IMAGE)
     public void setLocalSourceImage(SketchCanvas viewContainer, ReadableMap localSourceImage) {
-        if (localSourceImage != null && localSourceImage.getString("filename") != null) {
-            viewContainer.openImageFile(
+
+         viewContainer.openImageFile(
                 localSourceImage.hasKey("filename") ? localSourceImage.getString("filename") : null,
                 localSourceImage.hasKey("directory") ? localSourceImage.getString("directory") : "",
                 localSourceImage.hasKey("mode") ? localSourceImage.getString("mode") : ""
             );
-        }
+        // if (localSourceImage != null && localSourceImage.getString("filename") != null) {
+        //     viewContainer.openImageFile(
+        //         localSourceImage.hasKey("filename") ? localSourceImage.getString("filename") : null,
+        //         localSourceImage.hasKey("directory") ? localSourceImage.getString("directory") : "",
+        //         localSourceImage.hasKey("mode") ? localSourceImage.getString("mode") : ""
+        //     );
+        // }
     }
 
     @ReactProp(name = PROPS_TEXT)
