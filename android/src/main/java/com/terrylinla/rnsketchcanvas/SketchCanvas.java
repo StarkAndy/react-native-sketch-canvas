@@ -75,7 +75,7 @@ public class SketchCanvas extends View {
             //         BitmapFactory.decodeFile(new File(filename, directory == null ? "" : directory).toString(), bitmapOptions) :
             //         BitmapFactory.decodeResource(mContext.getResources(), res);
             // String fileName="/Users/GautamBohara/Documents/Trunk/React/Github/vision/iModel/assets/naruto.png";
-            File file = new File(filename);
+            //File file = new File(filename);
             // bitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
             // Drawable d = getResources().getDrawable(android.R.drawable.alert_dark_frame);
             Drawable d = getResources().getDrawable(R.drawable.amsler);
